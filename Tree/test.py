@@ -141,6 +141,20 @@ class BSTTestCase(unittest.TestCase):
         # Now the largest key is 54
         self.assertTupleEqual(self.bst.largest(), (54, "Value for 54"))
 
+    def test_myTest(self):
+
+        bsTree = BinarySearchTree()
+
+        self.assertEqual(bsTree.size(), 0)
+        # Not present element being removed
+        self.assertEqual(bsTree.remove(5), False)
+        # Same key added twice
+        bsTree.add(99, "Value for 99 (1st inserted)")
+        bsTree.add(99, "Value for 99 (2nd inserted)")
+
+        # Search finds first value baed on my algorithm
+        self.assertEqual(bsTree.search(99), "Value for 99 (1st inserted)")
+
 
 if __name__ == "__main__":
     unittest.main()
