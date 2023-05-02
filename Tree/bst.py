@@ -1,5 +1,5 @@
 class BSTNode:
-    # creating constructor for class BSTNOde
+    # creating constructor for class BSTNode
     def __init__(self, key, value, left=None, right=None, parent=None):
         self.key = key
         self.value = value
@@ -70,7 +70,7 @@ class BinarySearchTree:
         except:
             return None
 
-    # fucntion to fins the largest key value pair in tree by moving towards right of the tree
+    # fucntion to find the largest key value pair in tree by moving towards right of the tree
     def largest(self):
         temp = self._root
         try:
