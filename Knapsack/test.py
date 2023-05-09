@@ -6,7 +6,7 @@ class KnapSackTestCase(unittest.TestCase):
     # test case for fractional and 0/1 Knapsack using brute-force
     def test_brute01(self):
         # data elements with profit and weight value
-        box = [
+        data = [
             {"profit": 5, "weight": 2},
             {"profit": 13, "weight": 5},
             {"profit": 15, "weight": 4},
@@ -14,13 +14,13 @@ class KnapSackTestCase(unittest.TestCase):
         ]
         # total size of a bag
         size = 16
-        fractionalKnapsack = knapSackFractional(len(box), box, size, 0)
+        fractionalKnapsack = knapSackFractional(len(data), data, size, 0)
         # profit for a fractionalKnapsack by brute-force method should be 39.66666666666667
         self.assertEqual(fractionalKnapsack, 39.66666666666667)
 
     def test_brute02(self):
         # data elements with profit and weight value
-        box = [
+        data = [
             {"profit": 5, "weight": 2},
             {"profit": 13, "weight": 5},
             {"profit": 15, "weight": 4},
@@ -28,14 +28,14 @@ class KnapSackTestCase(unittest.TestCase):
         ]
         # total size of a bag
         size = 16
-        zeroOneKnapsack = knapSack01(len(box), box, size, 0)
+        zeroOneKnapsack = knapSack01(len(data), data, size, 0)
         # profit for a 0/1 Knapsack by brute-force method should be 36
         self.assertEqual(zeroOneKnapsack, 36)
 
     # test case for greedy method for fractional Knapsack
     def test_greedy(self):
         # data elements with profit and weight value
-        box = [
+        data = [
             {"profit": 5, "weight": 2},
             {"profit": 13, "weight": 7},
             {"profit": 15, "weight": 9},
@@ -44,7 +44,7 @@ class KnapSackTestCase(unittest.TestCase):
         # maximum capacity of a bag
         size = 16
 
-        profit = greedy(box, size)
+        profit = greedy(data, size)
         # profit for fractional knapsack by greedy method must be 31
         self.assertEqual(profit, 31)
 

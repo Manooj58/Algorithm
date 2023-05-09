@@ -35,17 +35,17 @@ def knapSack01(length, data, size, initial):
 
 
 # fractional Knapsack using greedy method
-def greedy(box, size,):
+def greedy(data, size,):
     profit = 0
 
     # calculating profit-weight ratio
-    for i in box:
+    for i in data:
         i["profit/weight"] = round(i["profit"] / i["weight"], 2)
 
     # sorting the data in reverse order
-    box.sort(key=lambda x: x["profit/weight"], reverse=True)
+    data.sort(key=lambda x: x["profit/weight"], reverse=True)
 
-    for i in box:
+    for i in data:
         if size <= 0:
             break
         # profit calculation
